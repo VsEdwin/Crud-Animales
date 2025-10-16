@@ -1,4 +1,3 @@
-
 <?php 
 	include "./clases/Conexion.php";
 	include "./clases/Crud.php";
@@ -8,7 +7,6 @@
 	$datos = $crud->obtenerDocumento($id);
 	$idMongo = $datos->_id;
 ?>
-
 
 <?php include "./header.php"; ?>
 
@@ -24,7 +22,7 @@
 
 					<h2 class="text-center mb-4">Actualizar datos de la mascota 🐾</h2>
 
-					<form action="./procesos/actualizar.php" method="POST">
+					<form action="./procesos/actualizar.php" method="POST" id="formActualizar">
 						
 						<input type="hidden" value="<?php echo $idMongo; ?>" name="id">
 
@@ -38,14 +36,7 @@
 							required>
 
 						<label for="edad" class="form-label mt-2">Edad</label>
-						<input 
-							type="number" 
-							class="form-control" 
-							id="edad" 
-							name="edad" 
-							min="0" 
-							value="<?php echo htmlspecialchars($datos->edad); ?>" 
-							required>
+						<input type="text" class="form-control" id="edad" name="edad" value="<?php echo htmlspecialchars($datos->edad); ?>" required>
 
 						<label for="especie" class="form-label mt-2">Especie</label>
 						<select class="form-select" id="especie" name="especie" required>
@@ -77,12 +68,10 @@
 							<i class="fa-solid fa-floppy-disk"></i> Actualizar Mascota
 						</button>
 					</form>
-
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-
 
 <?php include "./scripts.php"; ?>

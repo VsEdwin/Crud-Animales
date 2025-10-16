@@ -16,7 +16,7 @@
 						<input type="text" class="form-control" id="nombre_mascota" name="nombre_mascota" required>
 
 						<label for="edad" class="form-label mt-2">Edad</label>
-						<input type="number" class="form-control" id="edad" name="edad" min="0" required>
+						<input type="text" class="form-control" id="edad" name="edad" required>
 
 						<label for="especie" class="form-label mt-2">Especie</label>
 						<select class="form-select" id="especie" name="especie" required>
@@ -43,6 +43,5 @@
 		</div>
 	</div>
 </div>
-
 
 <?php include "./scripts.php"; ?>

@@ -1,24 +1,26 @@
-<?php session_start();
-	include "./clases/Conexion.php";
-	include "./clases/Crud.php";
-	$crud = new Crud();
-	$datos = $crud->mostrarDatos();
+<?php 
+session_start();
+include "./clases/Conexion.php";
+include "./clases/Crud.php";
 
-	$mensaje = '';
-	if (isset($_SESSION['mensaje_crud'])) {
-		$mensaje = $crud->mensajesCrud($_SESSION['mensaje_crud']);
-		unset($_SESSION['mensaje_crud']);
-	}
+$crud = new Crud();
+$datos = $crud->mostrarDatos();
+
+$mensaje = '';
+if (isset($_SESSION['mensaje_crud'])) {
+	$mensaje = $crud->mensajesCrud($_SESSION['mensaje_crud']);
+	unset($_SESSION['mensaje_crud']);
+}
 ?>
 
-
 <?php include "./header.php"; ?>
+
 <div class="container">
 	<div class="row">
 		<div class="col">
 			<div class="card mt-4 shadow-lg">
 				<div class="card-body">
-					<h2 class="text-center mb-3">🐾 CRUD de Animales</h2>
+					<h2 class="text-center mb-3">🐾 Crud de Animales 🐾</h2>
 
 					<a href="./agregar.php" class="btn btn-success mb-3">
 						<i class="fa-solid fa-paw"></i> Agregar nueva mascota
